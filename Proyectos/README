@@ -1,0 +1,23 @@
+Posibles optimizaciones 
+
+Del punto de Cauchy
+	1) tomar   0.99*alphaStar
+	Misma razón como en  lineSearch
+	-> 420 iteraciones
+
+
+	2) calcular  alphaStar  usando  pk = gradk/norm(gradk)
+       y tomar   0.99*alphaStar
+    -> 387 iteraciones
+
+
+	3) permitir un radio max. de confianza de 8  (para fPascal)
+	-> 109 iteraciones
+
+
+De la iteración de confianza
+	solo contar iteraciones donde se actualiza  xk
+	(Para la función  fPascal  no cambio nada,  pues la Hessiana es constante.
+     Por lo cual,    m(alpha * pk) = f(xk + alpha*pk), es decir, siempre es el polinomio cuadrático exacto.
+
+
